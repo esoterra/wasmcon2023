@@ -1,0 +1,21 @@
+[package]
+name = "rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cargo-component-bindings = { git = "https://github.com/bytecodealliance/cargo-component" }
+
+[lib]
+crate-type = ["cdylib"]
+
+[package.metadata.component]
+package = "component:rust"
+
+[package.metadata.component.target]
+path = "../../wit"
+world = "greeter-adapter"
+
+[package.metadata.component.dependencies]

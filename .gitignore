@@ -1,2 +1,1 @@
-composer/target
-runner/target
+**/target

@@ -16,5 +16,7 @@
             (memory $c-mem)
         )
     )
-    (export "greet" (func $c-greet))
+    (instance (export (interface "wasmcon2023:greet/interface@0.1.0"))
+        (export "greet" (func $c-greet))
+    )
 )

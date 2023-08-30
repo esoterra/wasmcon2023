@@ -3,7 +3,7 @@ use std::{fs, path::PathBuf};
 use anyhow::Result;
 use clap::Parser;
 use wasmtime::{
-    component::{Component, Linker},
+    component::{Component, Linker, bindgen},
     Config, Engine, Store,
 };
 
@@ -14,17 +14,7 @@ struct Args {
     input: PathBuf,
 }
 
-use wasmtime_component_macro::bindgen;
-bindgen!({
-    inline: "
-        package wasmcon2023:greet
-
-        world greeter {
-            export greet: func() -> string
-        }
-    ",
-
-});
+bindgen!("greeter" in "../wit/greeter.wit");
 
 fn main() -> Result<()> {
     let args = Args::parse();
@@ -41,7 +31,7 @@ fn main() -> Result<()> {
     let mut store = Store::new(&engine, ());
     let (greeter, _) = Greeter::instantiate(&mut store, &component, &linker)?;
 
-    println!("{}", greeter.call_greet(&mut store)?);
+    println!("{}", greeter.interface0.call_greet(&mut store)?);
 
     Ok(())
 }

@@ -1,0 +1,14 @@
+package wasmcon2023:greet@0.1.0
+
+interface %interface {
+    greet: func() -> string
+}
+
+world greeter {
+    export %interface
+}
+
+world greeter-adapter {
+    export %interface
+    import %interface
+}

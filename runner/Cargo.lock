@@ -1006,7 +1006,6 @@ dependencies = [
  "anyhow",
  "clap",
  "wasmtime",
- "wasmtime-component-macro",
 ]
 
 [[package]]
