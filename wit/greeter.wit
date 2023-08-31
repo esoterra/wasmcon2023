@@ -1,4 +1,4 @@
-package wasmcon2023:greet@0.1.0
+package wasmcon2023:greet
 
 interface %interface {
     greet: func() -> string

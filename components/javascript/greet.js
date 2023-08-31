@@ -1,4 +1,4 @@
-import { greet } from 'wasmcon2023:greet/interface@0.1.0';
+import { greet } from 'wasmcon2023:greet/interface';
 
 const greetInterface = {
     greet() {
@@ -6,4 +6,4 @@ const greetInterface = {
     }
 };
 
-export { greetInterface as 'interface0.1.0' }
+export { greetInterface as 'interface' }
