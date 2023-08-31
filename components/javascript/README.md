@@ -4,5 +4,4 @@
 npm install @bytecodealliance/jco
 npm install @bytecodealliance/componentize-js
 npx jco componentize --wit ../../wit/greeter.wit --world-name greeter-adapter ./greet.js  -o ../greet.js.wasm
-npx jco componentize --wit "C:\\Users\\Kyle B\\git\\wasmcon2023\\wit\\greeter.wit" --world-name greeter-adapter ./greet.js  -o ../greet.js.wasm
 ```
