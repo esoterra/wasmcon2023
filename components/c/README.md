@@ -3,8 +3,8 @@
 ```
 /opt/wasi-sdk/bin/clang \
     greeter_adapter.c component.c \
-    critter_component_type.o \
-    -o critter.wasm -mexec-model=reactor \
+    greeter_adapter_component_type.o \
+    -o greet-module.c.wasm -mexec-model=reactor
 
-wasm-tools component new critter.wasm -o critter.component.wasm
+wasm-tools component new greet-module.c.wasm -o ../greet.c.wasm
 ```
