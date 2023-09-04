@@ -55,7 +55,7 @@ mod ga {
     use anyhow::Ok;
     use wasmtime::component::bindgen;
 
-    bindgen!("greeter-adapter" in "../wit/greeter.wit");
+    bindgen!("proxy-greeter" in "../wit/greeter.wit");
 
     struct InputState {
         input: String
@@ -75,10 +75,10 @@ mod ga {
         let component = Component::new(&engine, component_bytes)?;
 
         let mut linker = Linker::new(&engine);
-        GreeterAdapter::add_to_linker(&mut linker, |state: &mut InputState| state)?;
+        ProxyGreeter::add_to_linker(&mut linker, |state: &mut InputState| state)?;
 
         let mut store = Store::new(&engine, InputState { input });
-        let (greeter, _) = GreeterAdapter::instantiate(&mut store, &component, &linker)?;
+        let (greeter, _) = ProxyGreeter::instantiate(&mut store, &component, &linker)?;
 
         println!("{}", greeter.interface0.call_greet(&mut store)?);
         Ok(())

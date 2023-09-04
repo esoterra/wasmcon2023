@@ -1,19 +1,19 @@
 package main
 
 import (
-	greetAdapter "app/gen"
+	proxyGreeter "app/gen"
 )
 
 func init() {
-	a := GreetAdapterImpl{}
-	greetAdapter.SetHandler(a)
+	a := ProxyGreeterImpl{}
+	proxyGreeter.SetHandler(a)
 }
 
-type GreetAdapterImpl struct {
+type ProxyGreeterImpl struct {
 }
 
-func (i GreetAdapterImpl) greet() string {
-	return greetAdapter.imports.greet() + " and Go!"
+func (i ProxyGreeterImpl) greet() string {
+	return proxyGreeter.imports.greet() + " and Go ʕ•ᴥ•ʔ!"
 }
 
 //go:generate wit-bindgen tiny-go ../../wit/world.wit --world greeter-adapter --out-dir=gen

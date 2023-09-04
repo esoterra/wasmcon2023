@@ -8,7 +8,7 @@ world greeter {
     export %interface
 }
 
-world greeter-adapter {
+world proxy-greeter {
     export %interface
     import %interface
 }

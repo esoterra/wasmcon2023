@@ -1,4 +1,4 @@
-from greeter_adapter import imports, exports
+from proxy_greeter import imports, exports
 
 class Interface(exports.Interface):
     def greet(self) -> str:

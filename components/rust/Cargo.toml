@@ -16,6 +16,6 @@ package = "component:rust"
 
 [package.metadata.component.target]
 path = "../../wit"
-world = "greeter-adapter"
+world = "proxy-greeter"
 
 [package.metadata.component.dependencies]
