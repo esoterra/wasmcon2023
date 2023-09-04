@@ -9,8 +9,6 @@ struct Component;
 
 impl Guest for Component {
     fn greet() -> String {
-        let mut greeting = import::greet();
-        greeting.push_str(" and Rust 🦀!");
-        greeting
+        import::greet() + " and Rust 🦀!"
     }
 }
