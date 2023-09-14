@@ -1,7 +1,9 @@
-# README
+# JavaScript
+
+Requirements
+* Node.js and NPM
+* `jco` and `componentize-js` as indicated in the package.json and package-lock.json files
 
 ```sh
-npm install @bytecodealliance/jco
-npm install @bytecodealliance/componentize-js
 npx jco componentize --wit ../../wit/greeter.wit --world-name proxy-greeter ./greet.js  -o ../greet.js.wasm
 ```
