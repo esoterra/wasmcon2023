@@ -21,7 +21,7 @@ The WIT file defines one interface `%interface` and two worlds `greeter` and `pr
 Components for the demo are implemented in the WebAssembly Text Format (WAT), C, Rust, JavaScript, and Python.
 All of the Components implement `proxy-greeter` except WAT which implements `greeter`.
 
-The WIP Go implementation was never finished.
+Some languages were a WIP (e.g. Go) at the time of the talk and others were planned but never implemented. Some of these may be added in the future to extend the demo.
 
 Each language folder has a README with instructions for building its source into a component. The resulting components are also included pre-built in the components folder for convenience.
 
